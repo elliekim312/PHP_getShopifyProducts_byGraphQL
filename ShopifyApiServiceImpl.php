@@ -49,6 +49,28 @@ class ShopifyApiServiceImpl implements ShopifyApiService
                                 tags
                                 descriptionHtml
                                 updatedAt
+                                metafields(first: 100) { 
+                                 edges {
+                                    node {
+                                          id
+                                          key 
+                                          value
+                                    }
+                                  }
+                                }
+                                media(first:1){ 
+                                 edges {
+                                     node { 
+                                        preview {
+                                           image { 
+                                                id 
+                                                altText 
+                                                originalSrc
+                                           }
+                                        }
+                                     }
+                                  }
+                                }
                                 variants(first:3) {
                                     edges {
                                         node {
